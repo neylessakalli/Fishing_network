@@ -1,6 +1,6 @@
 {
   "name": "fishing-network",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interactive world map displaying YouTube fishing videos by location",
   "main": "index.js",
   "scripts": {
