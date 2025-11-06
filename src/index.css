@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --primary: #0284c7;
-  --primary-dark: #0369a1;
-  --primary-light: #0ea5e9;
-  --accent: #14b8a6;
-  --accent-dark: #0d9488;
-  --background: #fafaf9;
-  --background-alt: #ffffff;
-  --text: #1c1917;
-  --text-light: #57534e;
-  --text-muted: #78716c;
-  --border: #e7e5e4;
-  --shadow: rgba(0, 0, 0, 0.08);
-  --shadow-medium: rgba(0, 0, 0, 0.12);
-  --shadow-strong: rgba(0, 0, 0, 0.16);
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #3b82f6;
+  --accent: #10b981;
+  --accent-dark: #059669;
+  --background: #0f172a;
+  --background-alt: #1e293b;
+  --surface: #1e293b;
+  --surface-elevated: #334155;
+  --text: #f8fafc;
+  --text-light: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-strong: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -33,6 +35,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 #root {
@@ -40,8 +43,41 @@ body {
   min-height: 100vh;
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 6px;
+  border: 2px solid #1e293b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, transform, opacity, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

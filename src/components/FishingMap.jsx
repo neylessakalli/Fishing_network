@@ -976,10 +976,9 @@ function ZoomBasedMarkers({ spots, onMarkerClick, onZoomChange }) {
           }}
         >
           <Popup>
-            <div style={{ textAlign: 'center', padding: '12px', minWidth: '220px', backgroundColor: '#ffffff' }}>
-              <strong style={{ color: '#1c1917', fontSize: '15px', fontWeight: '700' }}>🎣 {location.locationName}</strong>
-              <br />
-              <small style={{ color: '#78716c', fontSize: '12px', fontWeight: '500' }}>
+            <div style={{ textAlign: 'center', padding: '16px', minWidth: '240px', backgroundColor: '#1e293b', borderRadius: '12px', border: '1px solid #334155' }}>
+              <strong style={{ color: '#f8fafc', fontSize: '16px', fontWeight: '700', display: 'block', marginBottom: '6px' }}>🎣 {location.locationName}</strong>
+              <small style={{ color: '#94a3b8', fontSize: '13px', fontWeight: '500' }}>
                 {location.videos.length} {location.videos.length === 1 ? 'vidéo' : 'vidéos'} disponible{location.videos.length > 1 ? 's' : ''}
               </small>
               <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -990,29 +989,30 @@ function ZoomBasedMarkers({ spots, onMarkerClick, onZoomChange }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      color: '#0284c7',
+                      color: '#3b82f6',
                       display: 'block',
-                      padding: '8px 12px',
+                      padding: '10px 14px',
                       fontWeight: '600',
                       textDecoration: 'none',
-                      borderRadius: '8px',
-                      backgroundColor: '#f0f9ff',
-                      border: '2px solid #0284c7',
+                      borderRadius: '10px',
+                      backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                      border: '2px solid rgba(37, 99, 235, 0.3)',
                       fontSize: '13px',
-                      transition: 'all 0.2s',
-                      marginBottom: '6px'
+                      transition: 'all 0.3s',
+                      marginBottom: '8px',
+                      backdropFilter: 'blur(8px)'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.color = '#0369a1'
-                      e.target.style.backgroundColor = '#e0f2fe'
-                      e.target.style.borderColor = '#0369a1'
-                      e.target.style.transform = 'translateY(-1px)'
-                      e.target.style.boxShadow = '0 4px 12px rgba(2, 132, 199, 0.2)'
+                      e.target.style.color = '#60a5fa'
+                      e.target.style.backgroundColor = 'rgba(37, 99, 235, 0.2)'
+                      e.target.style.borderColor = '#3b82f6'
+                      e.target.style.transform = 'translateY(-2px)'
+                      e.target.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.4)'
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.color = '#0284c7'
-                      e.target.style.backgroundColor = '#f0f9ff'
-                      e.target.style.borderColor = '#0284c7'
+                      e.target.style.color = '#3b82f6'
+                      e.target.style.backgroundColor = 'rgba(37, 99, 235, 0.1)'
+                      e.target.style.borderColor = 'rgba(37, 99, 235, 0.3)'
                       e.target.style.transform = 'translateY(0)'
                       e.target.style.boxShadow = 'none'
                     }}
@@ -1091,25 +1091,28 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             position: 'absolute',
             top: '10px',
             left: '10px',
-            background: 'rgba(255, 255, 255, 0.98)',
-            padding: '16px',
-            borderRadius: '12px',
-            border: '1px solid rgba(231, 229, 228, 0.8)',
-            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
+            background: 'rgba(30, 41, 59, 0.98)',
+            padding: '20px',
+            borderRadius: '16px',
+            border: '1px solid rgba(51, 65, 85, 0.8)',
+            boxShadow: '0 12px 48px rgba(0, 0, 0, 0.5)',
+            backdropFilter: 'blur(12px)',
             zIndex: 1000,
             maxWidth: '300px'
           }}
         >
-          <h3 style={{ marginBottom: '8px', fontSize: '16px', color: '#1c1917', fontWeight: '700' }}>🎣 Mordu de la Pêche</h3>
-          <p style={{ fontSize: '12px', color: '#57534e', marginBottom: '4px' }}>
+          <h3 style={{ marginBottom: '10px', fontSize: '18px', color: '#f8fafc', fontWeight: '700' }}>🎣 Mordu de la Pêche</h3>
+          <p style={{ fontSize: '13px', color: '#cbd5e1', marginBottom: '6px', lineHeight: '1.5' }}>
             Zoomez pour voir les marqueurs de vidéos de pêche. Cliquez sur un marqueur pour regarder la vidéo.
           </p>
-          <p style={{ fontSize: '11px', color: '#78716c' }}>
-            Total vidéos: {fishingSpots.length} | Localisations: {groupSpotsByLocation(fishingSpots).length}
-          </p>
-          <p style={{ fontSize: '11px', color: '#78716c', marginTop: '4px' }}>
-            Zoom actuel: {currentZoom} | Marqueurs visibles: {visibleMarkers}
-          </p>
+          <div style={{ paddingTop: '8px', borderTop: '1px solid rgba(51, 65, 85, 0.5)' }}>
+            <p style={{ fontSize: '12px', color: '#94a3b8', marginBottom: '4px' }}>
+              Total vidéos: <span style={{ color: '#3b82f6', fontWeight: '600' }}>{fishingSpots.length}</span> | Localisations: <span style={{ color: '#10b981', fontWeight: '600' }}>{groupSpotsByLocation(fishingSpots).length}</span>
+            </p>
+            <p style={{ fontSize: '12px', color: '#94a3b8' }}>
+              Zoom actuel: <span style={{ color: '#f8fafc', fontWeight: '600' }}>{currentZoom}</span> | Marqueurs visibles: <span style={{ color: '#f8fafc', fontWeight: '600' }}>{visibleMarkers}</span>
+            </p>
+          </div>
         </div>
       )}
       {isPreview && (
@@ -1119,15 +1122,16 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             bottom: '10px',
             left: '10px',
             right: '10px',
-            background: 'rgba(255, 255, 255, 0.98)',
-            padding: '10px 16px',
-            borderRadius: '12px',
-            border: '1px solid rgba(231, 229, 228, 0.8)',
-            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
+            background: 'rgba(30, 41, 59, 0.95)',
+            padding: '12px 20px',
+            borderRadius: '16px',
+            border: '1px solid rgba(51, 65, 85, 0.8)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+            backdropFilter: 'blur(12px)',
             zIndex: 1000,
             textAlign: 'center',
-            fontSize: '12px',
-            color: '#57534e',
+            fontSize: '13px',
+            color: '#cbd5e1',
             fontWeight: '500',
             pointerEvents: 'none'
           }}
