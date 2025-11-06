@@ -1,0 +1,163 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(1200px 600px at 70% -10%, #2a1f0f 0%, #1a1508 50%), #0f0a04;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  background: linear-gradient(180deg, rgba(42,31,15,.9), rgba(26,21,8,.6) 60%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,200,100,.15);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,200,100,.2);
+  background: rgba(139, 90, 43, 0.3);
+  color: #ffe8c8;
+  text-decoration: none;
+  transition: .2s ease;
+  font-weight: 600;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(139, 90, 43, 0.5);
+  border-color: rgba(255,200,100,.4);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  border-color: transparent;
+  color: #2a1f0f;
+}
+
+.main-content {
+  flex: 1;
+  padding: 22px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.fishing-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.3));
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin: 0 0 10px;
+  color: #ffe8c8;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-text p {
+  margin: 0 0 16px;
+  color: #d4b896;
+  font-size: 1.05rem;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(139, 90, 43, 0.25);
+  border: 1px solid rgba(255,200,100,.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #e8c896;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.hero-visual {
+  position: relative;
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,200,100,.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,.4), 0 0 20px rgba(245, 158, 11, 0.1);
+  cursor: pointer;
+}
+
+.panel {
+  margin-top: 18px;
+  background: linear-gradient(180deg, rgba(42,31,15,.9), rgba(26,21,8,.75));
+  border: 1px solid rgba(255,200,100,.15);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.panel-footer {
+  padding: 12px 14px;
+}
+
+.quota {
+  color: #d4b896;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  color: #a68b5f;
+  border-top: 1px solid rgba(255,200,100,.1);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer span:last-child {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-visual {
+    height: 420px;
+  }
+  
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
