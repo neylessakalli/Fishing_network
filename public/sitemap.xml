@@ -4,8 +4,8 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://your-custom-domain.com/</loc>
-    <lastmod>2025-11-06</lastmod>
+    <loc>https://fishing-network.vercel.app/</loc>
+    <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
