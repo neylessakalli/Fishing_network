@@ -1,37 +1,37 @@
-/* Professional styling for map and components */
+/* Professional styling matching channel colors */
 
 .leaflet-container {
   height: 100%;
   width: 100%;
   z-index: 1;
-  background: #0f172a;
+  background: #0f0a04;
 }
 
-/* Dark theme for Leaflet controls */
+/* Earthy theme for Leaflet controls */
 .leaflet-control-zoom a {
-  background-color: #1e293b !important;
-  color: #f8fafc !important;
-  border: 1px solid #334155 !important;
+  background-color: #2a1f0f !important;
+  color: #f59e0b !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
 }
 
 .leaflet-control-zoom a:hover {
-  background-color: #334155 !important;
-  color: #3b82f6 !important;
+  background-color: #3d2815 !important;
+  color: #fbbf24 !important;
 }
 
 .leaflet-control-attribution {
-  background-color: rgba(30, 41, 59, 0.9) !important;
-  color: #94a3b8 !important;
+  background-color: rgba(42, 31, 15, 0.9) !important;
+  color: #a68b5f !important;
   backdrop-filter: blur(8px);
 }
 
 .leaflet-control-attribution a {
-  color: #3b82f6 !important;
+  color: #f59e0b !important;
 }
 
 /* Custom marker styling */
 .custom-fishing-marker {
-  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.4));
+  filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.5));
 }
 
 /* Smooth animations */
@@ -50,21 +50,21 @@
   animation: fadeIn 0.6s ease-out;
 }
 
-/* Premium scrollbar for webkit browsers */
+/* Professional scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #1a1508;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #3d2815;
   border-radius: 6px;
-  border: 2px solid #1e293b;
+  border: 2px solid #1a1508;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #4a3420;
 }

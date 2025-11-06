@@ -837,12 +837,12 @@ const iconDefault = L.icon({
   shadowSize: [41, 41]
 })
 
-// Modern blue/teal marker icon for fishing spots
+// Orange/amber marker icon matching channel colors
 // Using a custom HTML div element styled as a fishing pin
 const createRedIcon = () => {
   return L.divIcon({
     className: 'custom-fishing-marker',
-    html: '<div style="background-color: #0284c7; width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2.5px solid #fff; box-shadow: 0 4px 12px rgba(2,132,199,0.4), 0 0 0 2px rgba(2,132,199,0.1);"></div><div style="background-color: #14b8a6; width: 10px; height: 10px; border-radius: 50%; margin: -17px auto 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>',
+    html: '<div style="background-color: #f59e0b; width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2.5px solid #fff; box-shadow: 0 4px 12px rgba(245,158,11,0.5), 0 0 0 2px rgba(245,158,11,0.2);"></div><div style="background-color: #f97316; width: 10px; height: 10px; border-radius: 50%; margin: -17px auto 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
     iconSize: [24, 24],
     iconAnchor: [12, 24],
     popupAnchor: [0, -24]
@@ -976,9 +976,9 @@ function ZoomBasedMarkers({ spots, onMarkerClick, onZoomChange }) {
           }}
         >
           <Popup>
-            <div style={{ textAlign: 'center', padding: '16px', minWidth: '240px', backgroundColor: '#1e293b', borderRadius: '12px', border: '1px solid #334155' }}>
-              <strong style={{ color: '#f8fafc', fontSize: '16px', fontWeight: '700', display: 'block', marginBottom: '6px' }}>🎣 {location.locationName}</strong>
-              <small style={{ color: '#94a3b8', fontSize: '13px', fontWeight: '500' }}>
+            <div style={{ textAlign: 'center', padding: '16px', minWidth: '240px', backgroundColor: '#2a1f0f', borderRadius: '12px', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+              <strong style={{ color: '#f59e0b', fontSize: '16px', fontWeight: '700', display: 'block', marginBottom: '6px' }}>🎣 {location.locationName}</strong>
+              <small style={{ color: '#d4b896', fontSize: '13px', fontWeight: '500' }}>
                 {location.videos.length} {location.videos.length === 1 ? 'vidéo' : 'vidéos'} disponible{location.videos.length > 1 ? 's' : ''}
               </small>
               <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -989,30 +989,30 @@ function ZoomBasedMarkers({ spots, onMarkerClick, onZoomChange }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      color: '#3b82f6',
+                      color: '#f59e0b',
                       display: 'block',
                       padding: '10px 14px',
                       fontWeight: '600',
                       textDecoration: 'none',
                       borderRadius: '10px',
-                      backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                      border: '2px solid rgba(37, 99, 235, 0.3)',
+                      backgroundColor: 'rgba(245, 158, 11, 0.15)',
+                      border: '2px solid rgba(245, 158, 11, 0.4)',
                       fontSize: '13px',
                       transition: 'all 0.3s',
                       marginBottom: '8px',
                       backdropFilter: 'blur(8px)'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.color = '#60a5fa'
-                      e.target.style.backgroundColor = 'rgba(37, 99, 235, 0.2)'
-                      e.target.style.borderColor = '#3b82f6'
+                      e.target.style.color = '#fbbf24'
+                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.25)'
+                      e.target.style.borderColor = '#f59e0b'
                       e.target.style.transform = 'translateY(-2px)'
-                      e.target.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.4)'
+                      e.target.style.boxShadow = '0 8px 24px rgba(245, 158, 11, 0.5)'
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.color = '#3b82f6'
-                      e.target.style.backgroundColor = 'rgba(37, 99, 235, 0.1)'
-                      e.target.style.borderColor = 'rgba(37, 99, 235, 0.3)'
+                      e.target.style.color = '#f59e0b'
+                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.15)'
+                      e.target.style.borderColor = 'rgba(245, 158, 11, 0.4)'
                       e.target.style.transform = 'translateY(0)'
                       e.target.style.boxShadow = 'none'
                     }}
@@ -1091,26 +1091,26 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             position: 'absolute',
             top: '10px',
             left: '10px',
-            background: 'rgba(30, 41, 59, 0.98)',
+            background: 'rgba(42, 31, 15, 0.98)',
             padding: '20px',
             borderRadius: '16px',
-            border: '1px solid rgba(51, 65, 85, 0.8)',
-            boxShadow: '0 12px 48px rgba(0, 0, 0, 0.5)',
+            border: '1px solid rgba(245, 158, 11, 0.3)',
+            boxShadow: '0 12px 48px rgba(0, 0, 0, 0.6)',
             backdropFilter: 'blur(12px)',
             zIndex: 1000,
             maxWidth: '300px'
           }}
         >
-          <h3 style={{ marginBottom: '10px', fontSize: '18px', color: '#f8fafc', fontWeight: '700' }}>🎣 Mordu de la Pêche</h3>
-          <p style={{ fontSize: '13px', color: '#cbd5e1', marginBottom: '6px', lineHeight: '1.5' }}>
+          <h3 style={{ marginBottom: '10px', fontSize: '18px', color: '#f59e0b', fontWeight: '700' }}>🎣 Mordu de la Pêche</h3>
+          <p style={{ fontSize: '13px', color: '#d4b896', marginBottom: '6px', lineHeight: '1.5' }}>
             Zoomez pour voir les marqueurs de vidéos de pêche. Cliquez sur un marqueur pour regarder la vidéo.
           </p>
-          <div style={{ paddingTop: '8px', borderTop: '1px solid rgba(51, 65, 85, 0.5)' }}>
-            <p style={{ fontSize: '12px', color: '#94a3b8', marginBottom: '4px' }}>
-              Total vidéos: <span style={{ color: '#3b82f6', fontWeight: '600' }}>{fishingSpots.length}</span> | Localisations: <span style={{ color: '#10b981', fontWeight: '600' }}>{groupSpotsByLocation(fishingSpots).length}</span>
+          <div style={{ paddingTop: '8px', borderTop: '1px solid rgba(245, 158, 11, 0.2)' }}>
+            <p style={{ fontSize: '12px', color: '#a68b5f', marginBottom: '4px' }}>
+              Total vidéos: <span style={{ color: '#f59e0b', fontWeight: '600' }}>{fishingSpots.length}</span> | Localisations: <span style={{ color: '#f97316', fontWeight: '600' }}>{groupSpotsByLocation(fishingSpots).length}</span>
             </p>
-            <p style={{ fontSize: '12px', color: '#94a3b8' }}>
-              Zoom actuel: <span style={{ color: '#f8fafc', fontWeight: '600' }}>{currentZoom}</span> | Marqueurs visibles: <span style={{ color: '#f8fafc', fontWeight: '600' }}>{visibleMarkers}</span>
+            <p style={{ fontSize: '12px', color: '#a68b5f' }}>
+              Zoom actuel: <span style={{ color: '#ffe8c8', fontWeight: '600' }}>{currentZoom}</span> | Marqueurs visibles: <span style={{ color: '#ffe8c8', fontWeight: '600' }}>{visibleMarkers}</span>
             </p>
           </div>
         </div>
@@ -1122,16 +1122,16 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             bottom: '10px',
             left: '10px',
             right: '10px',
-            background: 'rgba(30, 41, 59, 0.95)',
+            background: 'rgba(42, 31, 15, 0.95)',
             padding: '12px 20px',
             borderRadius: '16px',
-            border: '1px solid rgba(51, 65, 85, 0.8)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+            border: '1px solid rgba(245, 158, 11, 0.3)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
             backdropFilter: 'blur(12px)',
             zIndex: 1000,
             textAlign: 'center',
             fontSize: '13px',
-            color: '#cbd5e1',
+            color: '#d4b896',
             fontWeight: '500',
             pointerEvents: 'none'
           }}
