@@ -837,15 +837,15 @@ const iconDefault = L.icon({
   shadowSize: [41, 41]
 })
 
-// Warm orange/amber marker icon for fishing spots
+// Modern blue/teal marker icon for fishing spots
 // Using a custom HTML div element styled as a fishing pin
 const createRedIcon = () => {
   return L.divIcon({
     className: 'custom-fishing-marker',
-    html: '<div style="background-color: #f59e0b; width: 22px; height: 22px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid #fff; box-shadow: 0 2px 6px rgba(245,158,11,0.5), 0 0 10px rgba(245,158,11,0.3);"></div><div style="background-color: #f97316; width: 8px; height: 8px; border-radius: 50%; margin: -15px auto 0; border: 1.5px solid #fff;"></div>',
-    iconSize: [22, 22],
-    iconAnchor: [11, 22],
-    popupAnchor: [0, -22]
+    html: '<div style="background-color: #0284c7; width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2.5px solid #fff; box-shadow: 0 4px 12px rgba(2,132,199,0.4), 0 0 0 2px rgba(2,132,199,0.1);"></div><div style="background-color: #14b8a6; width: 10px; height: 10px; border-radius: 50%; margin: -17px auto 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>',
+    iconSize: [24, 24],
+    iconAnchor: [12, 24],
+    popupAnchor: [0, -24]
   })
 }
 
@@ -976,11 +976,11 @@ function ZoomBasedMarkers({ spots, onMarkerClick, onZoomChange }) {
           }}
         >
           <Popup>
-            <div style={{ textAlign: 'center', padding: '8px', minWidth: '200px' }}>
-              <strong style={{ color: '#2a1f0f', fontSize: '14px' }}>🎣 {location.locationName}</strong>
+            <div style={{ textAlign: 'center', padding: '12px', minWidth: '220px', backgroundColor: '#ffffff' }}>
+              <strong style={{ color: '#1c1917', fontSize: '15px', fontWeight: '700' }}>🎣 {location.locationName}</strong>
               <br />
-              <small style={{ color: '#5a4a3a', fontSize: '11px' }}>
-                {location.videos.length} {location.videos.length === 1 ? 'video' : 'videos'} available
+              <small style={{ color: '#78716c', fontSize: '12px', fontWeight: '500' }}>
+                {location.videos.length} {location.videos.length === 1 ? 'vidéo' : 'vidéos'} disponible{location.videos.length > 1 ? 's' : ''}
               </small>
               <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {location.videos.map((video, videoIndex) => (
@@ -990,28 +990,30 @@ function ZoomBasedMarkers({ spots, onMarkerClick, onZoomChange }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      color: '#f59e0b',
+                      color: '#0284c7',
                       display: 'block',
-                      padding: '6px 10px',
+                      padding: '8px 12px',
                       fontWeight: '600',
                       textDecoration: 'none',
-                      borderRadius: '4px',
-                      backgroundColor: 'rgba(245, 158, 11, 0.15)',
-                      border: '2px solid rgba(245, 158, 11, 0.3)',
-                      fontSize: '12px',
+                      borderRadius: '8px',
+                      backgroundColor: '#f0f9ff',
+                      border: '2px solid #0284c7',
+                      fontSize: '13px',
                       transition: 'all 0.2s',
-                      textShadow: '0 1px 2px rgba(0,0,0,0.2)'
+                      marginBottom: '6px'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.color = '#f97316'
-                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.25)'
-                      e.target.style.borderColor = 'rgba(245, 158, 11, 0.5)'
-                      e.target.style.boxShadow = '0 2px 8px rgba(245, 158, 11, 0.3)'
+                      e.target.style.color = '#0369a1'
+                      e.target.style.backgroundColor = '#e0f2fe'
+                      e.target.style.borderColor = '#0369a1'
+                      e.target.style.transform = 'translateY(-1px)'
+                      e.target.style.boxShadow = '0 4px 12px rgba(2, 132, 199, 0.2)'
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.color = '#f59e0b'
-                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.15)'
-                      e.target.style.borderColor = 'rgba(245, 158, 11, 0.3)'
+                      e.target.style.color = '#0284c7'
+                      e.target.style.backgroundColor = '#f0f9ff'
+                      e.target.style.borderColor = '#0284c7'
+                      e.target.style.transform = 'translateY(0)'
                       e.target.style.boxShadow = 'none'
                     }}
                   >
@@ -1089,23 +1091,23 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             position: 'absolute',
             top: '10px',
             left: '10px',
-            background: 'rgba(42, 31, 15, 0.95)',
-            padding: '12px',
-            borderRadius: '8px',
-            border: '2px solid rgba(245, 158, 11, 0.3)',
+            background: 'rgba(255, 255, 255, 0.98)',
+            padding: '16px',
+            borderRadius: '12px',
+            border: '1px solid rgba(231, 229, 228, 0.8)',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
             zIndex: 1000,
-            maxWidth: '300px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+            maxWidth: '300px'
           }}
         >
-          <h3 style={{ marginBottom: '8px', fontSize: '16px', color: '#ffe8c8' }}>🎣 Mordu de la Pêche</h3>
-          <p style={{ fontSize: '12px', color: '#d4b896', marginBottom: '4px' }}>
-            Zoomez pour voir les marqueurs de vidéos de pêche. Cliquez sur un marqueur rouge pour regarder la vidéo.
+          <h3 style={{ marginBottom: '8px', fontSize: '16px', color: '#1c1917', fontWeight: '700' }}>🎣 Mordu de la Pêche</h3>
+          <p style={{ fontSize: '12px', color: '#57534e', marginBottom: '4px' }}>
+            Zoomez pour voir les marqueurs de vidéos de pêche. Cliquez sur un marqueur pour regarder la vidéo.
           </p>
-          <p style={{ fontSize: '11px', color: '#a68b5f' }}>
+          <p style={{ fontSize: '11px', color: '#78716c' }}>
             Total vidéos: {fishingSpots.length} | Localisations: {groupSpotsByLocation(fishingSpots).length}
           </p>
-          <p style={{ fontSize: '11px', color: '#a68b5f', marginTop: '4px' }}>
+          <p style={{ fontSize: '11px', color: '#78716c', marginTop: '4px' }}>
             Zoom actuel: {currentZoom} | Marqueurs visibles: {visibleMarkers}
           </p>
         </div>
@@ -1117,15 +1119,16 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             bottom: '10px',
             left: '10px',
             right: '10px',
-            background: 'rgba(42, 31, 15, 0.95)',
-            padding: '8px 12px',
-            borderRadius: '8px',
-            border: '2px solid rgba(245, 158, 11, 0.3)',
+            background: 'rgba(255, 255, 255, 0.98)',
+            padding: '10px 16px',
+            borderRadius: '12px',
+            border: '1px solid rgba(231, 229, 228, 0.8)',
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
             zIndex: 1000,
             textAlign: 'center',
             fontSize: '12px',
-            color: '#d4b896',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+            color: '#57534e',
+            fontWeight: '500',
             pointerEvents: 'none'
           }}
         >
