@@ -17,26 +17,61 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="brand">
-          <img src="/logo.svg" alt="Fishing Network" className="logo" />
-          <span>Fishing Network</span>
+          <img src="/mordu-logo.jpg" alt="Mordu de la Pêche" className="logo" onError={(e) => { e.target.src = '/logo.svg'; }} />
+          <span>Mordu de la Pêche</span>
         </div>
         <nav className="nav">
-          <a className="btn" href="#about">About</a>
+          <a className="btn" href="#about">À propos</a>
         </nav>
       </header>
       <main className="main-content">
         <section className="hero">
-          <div className="hero-text">
-            <div className="fishing-icon">🎣</div>
-            <h1>Explore the world's best fishing adventures — mapped, pinned, and one click away.</h1>
-            <p>Discover where every great catch was made! Zoom in to see fishing video markers and click to watch.</p>
-            <div className="badges">
-              <span className="badge">Click on fishing spots to watch videos</span>
-              <span className="badge">Zoom in to see markers</span>
+          <div className="hero-banner">
+            <img src="/mordu-banner.png" alt="Mordu de la Pêche" className="banner-image" />
+          </div>
+          <div className="hero-content-wrapper">
+            <div className="hero-text">
+              <div className="fishing-icon">🎣</div>
+              <h1>Explorez les meilleures aventures de pêche du monde — cartographiées, épinglées, et à un clic.</h1>
+              <p>Découvrez où chaque grande prise a été faite ! Zoomez pour voir les marqueurs de vidéos de pêche et cliquez pour regarder.</p>
+              <div className="badges">
+                <span className="badge">Cliquez sur les spots de pêche pour regarder les vidéos</span>
+                <span className="badge">Zoomez pour voir les marqueurs</span>
+              </div>
+            </div>
+            <div className="hero-visual" id="preview-area">
+              <FishingMap isPreview={true} onFullscreenClick={handleFullscreenClick} />
             </div>
           </div>
-          <div className="hero-visual" id="preview-area">
-            <FishingMap isPreview={true} onFullscreenClick={handleFullscreenClick} />
+        </section>
+        <section className="photos-section" id="about">
+          <h2 className="section-title">Aventures de Pêche</h2>
+          <p className="section-description">Découvrez les moments forts de nos expéditions de pêche à travers le monde</p>
+          <div className="photos-grid">
+            <div className="photo-card">
+              <img src="/mordu-photo-1.jpg" alt="Aventure de pêche Mordu de la Pêche" className="photo-image" />
+              <div className="photo-overlay">
+                <span className="photo-label">Expédition Internationale</span>
+              </div>
+            </div>
+            <div className="photo-card">
+              <img src="/mordu-photo-2.jpeg" alt="Aventure de pêche Mordu de la Pêche" className="photo-image" />
+              <div className="photo-overlay">
+                <span className="photo-label">Grandes Prises</span>
+              </div>
+            </div>
+            <div className="photo-card">
+              <img src="/mordu-photo-3.jpeg" alt="Aventure de pêche Mordu de la Pêche" className="photo-image" />
+              <div className="photo-overlay">
+                <span className="photo-label">Aventures Aquatiques</span>
+              </div>
+            </div>
+            <div className="photo-card">
+              <img src="/mordu-photo-4.jpeg" alt="Aventure de pêche Mordu de la Pêche" className="photo-image" />
+              <div className="photo-overlay">
+                <span className="photo-label">Destinations Exotiques</span>
+              </div>
+            </div>
           </div>
         </section>
         {showFullscreen && (
@@ -73,8 +108,8 @@ function App() {
         )}
       </main>
       <footer className="footer">
-        <span>© {new Date().getFullYear()} Fishing Network</span>
-        <span>Explore the world's best fishing adventures — mapped, pinned, and one click away.</span>
+        <span>© {new Date().getFullYear()} Mordu de la Pêche</span>
+        <span>Explorez les meilleures aventures de pêche du monde — cartographiées, épinglées, et à un clic.</span>
       </footer>
     </div>
   )

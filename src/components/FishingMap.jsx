@@ -996,20 +996,23 @@ function ZoomBasedMarkers({ spots, onMarkerClick, onZoomChange }) {
                       fontWeight: '600',
                       textDecoration: 'none',
                       borderRadius: '4px',
-                      backgroundColor: 'rgba(245, 158, 11, 0.1)',
-                      border: '1px solid rgba(245, 158, 11, 0.3)',
+                      backgroundColor: 'rgba(245, 158, 11, 0.15)',
+                      border: '2px solid rgba(245, 158, 11, 0.3)',
                       fontSize: '12px',
-                      transition: 'all 0.2s'
+                      transition: 'all 0.2s',
+                      textShadow: '0 1px 2px rgba(0,0,0,0.2)'
                     }}
                     onMouseEnter={(e) => {
                       e.target.style.color = '#f97316'
-                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.2)'
+                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.25)'
                       e.target.style.borderColor = 'rgba(245, 158, 11, 0.5)'
+                      e.target.style.boxShadow = '0 2px 8px rgba(245, 158, 11, 0.3)'
                     }}
                     onMouseLeave={(e) => {
                       e.target.style.color = '#f59e0b'
-                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.1)'
+                      e.target.style.backgroundColor = 'rgba(245, 158, 11, 0.15)'
                       e.target.style.borderColor = 'rgba(245, 158, 11, 0.3)'
+                      e.target.style.boxShadow = 'none'
                     }}
                   >
                     ▶ {video.label || formatVideoLabel(video.name, video.url)}
@@ -1089,21 +1092,21 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             background: 'rgba(42, 31, 15, 0.95)',
             padding: '12px',
             borderRadius: '8px',
-            border: '1px solid rgba(255,200,100,0.25)',
+            border: '2px solid rgba(245, 158, 11, 0.3)',
             zIndex: 1000,
             maxWidth: '300px',
             boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
           }}
         >
-          <h3 style={{ marginBottom: '8px', fontSize: '16px', color: '#ffe8c8' }}>🎣 Fishing Network</h3>
+          <h3 style={{ marginBottom: '8px', fontSize: '16px', color: '#ffe8c8' }}>🎣 Mordu de la Pêche</h3>
           <p style={{ fontSize: '12px', color: '#d4b896', marginBottom: '4px' }}>
-            Zoom in to see fishing video markers. Click a red marker to watch the video.
+            Zoomez pour voir les marqueurs de vidéos de pêche. Cliquez sur un marqueur rouge pour regarder la vidéo.
           </p>
           <p style={{ fontSize: '11px', color: '#a68b5f' }}>
-            Total videos: {fishingSpots.length} | Locations: {groupSpotsByLocation(fishingSpots).length}
+            Total vidéos: {fishingSpots.length} | Localisations: {groupSpotsByLocation(fishingSpots).length}
           </p>
           <p style={{ fontSize: '11px', color: '#a68b5f', marginTop: '4px' }}>
-            Current zoom: {currentZoom} | Visible markers: {visibleMarkers}
+            Zoom actuel: {currentZoom} | Marqueurs visibles: {visibleMarkers}
           </p>
         </div>
       )}
@@ -1117,7 +1120,7 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             background: 'rgba(42, 31, 15, 0.95)',
             padding: '8px 12px',
             borderRadius: '8px',
-            border: '1px solid rgba(255,200,100,0.25)',
+            border: '2px solid rgba(245, 158, 11, 0.3)',
             zIndex: 1000,
             textAlign: 'center',
             fontSize: '12px',
@@ -1126,7 +1129,7 @@ function FishingMap({ isPreview = false, onFullscreenClick }) {
             pointerEvents: 'none'
           }}
         >
-          🗺️ Click to open fullscreen map
+          🗺️ Cliquez pour ouvrir la carte en plein écran
         </div>
       )}
     </div>
