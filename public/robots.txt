@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 
 # Sitemap location (update with your actual domain)
-Sitemap: https://fishing-network.vercel.app/sitemap.xml
+Sitemap: https://your-custom-domain.com/sitemap.xml
 
